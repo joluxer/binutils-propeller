@@ -1219,6 +1219,7 @@ parse_src_or_dest(char *str, struct propeller_code *operand, struct propeller_co
     {
     case O_constant:
       operand->reloc.exp.X_add_number += delta;
+      __attribute__ ((fallthrough));
     case O_register:
       if (operand->reloc.exp.X_add_number & ~0x1ff)
         {
